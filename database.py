@@ -117,21 +117,3 @@ class WCSTNormalizeDatabase:
             )
 
         return std_score
-
-
-if __name__ == "__main__":
-    db = WCSTNormalizeDatabase.build_from_dir(
-        "/home/navi/codespace/wcst_data_process/data/WCST_Normative"
-    )
-
-    score = db.retrieval(
-        age=66.03, education=14, attribute_name="Total Error", value=38
-    )
-    print(score)
-    score = db.retrieval(age=123, education=14,
-                         attribute_name="Total Error", value=38)
-    print(score)
-    score = db.retrieval(
-        age=69.03, education=12, attribute_name="Total Error", value=38
-    )
-    print(score)
