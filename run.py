@@ -20,6 +20,7 @@ TARGET_KEY = [
     "Total Error",
     "Percent Error",
     "Perseverative Responses",
+    "Percent Perseverative Responses",
     "Perseverative Errors",
     "Percent Perseverative Errors",
     "Nonperseverative Errors",
@@ -82,7 +83,7 @@ def main(args):
                 db.retrieval(pretest_age, education, target, pretest_value)
             )
             std_data[target + POSTTEST_SUFFIX].append(
-                db.retrieval(pretest_age, education, target, posttest_value)
+                db.retrieval(posttest_age, education, target, posttest_value)
             )
 
     std_data = pd.DataFrame.from_dict(std_data)
