@@ -65,7 +65,7 @@ class WCSTNormalizeDatabase:
             mapping = {raw: std for raw, std in zip(raw_score, std_score)}
 
             if percentage:
-                value = math.ceil(value * 100)
+                value = round(value * 100)
 
             min_raw = min(raw_score)
             max_raw = max(raw_score)
@@ -80,7 +80,7 @@ class WCSTNormalizeDatabase:
             return -1
 
     def retrieval(self, age: float, education: int, attribute_name: str, value):
-        age = math.ceil(age)
+        age = math.floor(age)
         if education == 12:
             row = self.db[
                 (age >= self.db["min_age"])
